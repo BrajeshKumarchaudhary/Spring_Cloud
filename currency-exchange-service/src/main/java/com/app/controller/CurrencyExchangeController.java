@@ -16,7 +16,7 @@ public class CurrencyExchangeController {
 private ExchangeService service;
 	
      @GetMapping(value = "convert")
-	public CurrencyValue convert(@RequestParam("usd")  double usd) {
-		return service.getInrValue(usd);
+	public CurrencyValue convert(@RequestParam("from")  String from,@RequestParam("to") String to) {
+		return service.getInrValue(from,to);
 	}
 }
