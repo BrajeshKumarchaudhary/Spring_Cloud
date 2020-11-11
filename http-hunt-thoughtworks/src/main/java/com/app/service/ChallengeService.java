@@ -32,9 +32,7 @@ public class ChallengeService {
 	 */
 	public String solveChallenge() {
 		String inputData=apiCallService.getInput(userId);
-		System.out.println("Text--"+inputData);
 		SampleOutPut outputData=countCharacters(inputData);
-		System.out.println("Count--"+outputData.getOutput().getCount());
 		String response=apiCallService.putOutput(userId, outputData);
 		return response;
 	}
