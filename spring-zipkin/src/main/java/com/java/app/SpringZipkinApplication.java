@@ -10,16 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SpringZipkinApplication {
 
-	private static final Logger log=org.slf4j.LoggerFactory.getLogger(SpringZipkinApplication.class);
-	
-			@GetMapping("/gettext")
-	public String getText()
-	{
-				log.info("Called");
+	private static final Logger log = org.slf4j.LoggerFactory.getLogger(SpringZipkinApplication.class);
+
+	@GetMapping("/gettext")
+	public String getText() {
+		log.info("Called");
 		return "Hello";
 	}
-	
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringZipkinApplication.class, args);
 	}

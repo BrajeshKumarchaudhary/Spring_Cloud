@@ -14,11 +14,17 @@ import com.app.service.CurrencyService;
 public class CurrencyConverionController {
 	@Autowired
 	CurrencyService currencyService;
-	
+
 	@GetMapping(value = "courrency-convert")
-	public ConvertedValue getConvertedValue(@RequestParam(value = "from",required = true,defaultValue = "USD") String from,@RequestParam("to") String to
-			,@RequestParam("value") double value) {
-		return currencyService.getCurrencyConvertedValue(from,to,value);
+	public ConvertedValue getConvertedValue(
+			@RequestParam(value = "from", required = true, defaultValue = "USD") String from,
+			@RequestParam("to") String to, @RequestParam("value") double value) {
+		return currencyService.getCurrencyConvertedValue(from, to, value);
+	}
+
+	@GetMapping(value = "rabbitmq-putmessage")
+	public String putMessage() {
+		return "SUCCESS";
 	}
 
 }
